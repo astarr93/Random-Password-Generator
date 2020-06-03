@@ -10,36 +10,53 @@ function writePassword() {
 }
 
 function generatePassword() {
+
   // Ask user for desired password length
-  var pwChoiceLength = parseInt(
+  var pwLength = parseInt(
     prompt("How many characters should your password be?")
   );
-  var pwLength = parseInt(pwChoiceLength);
 
   // Checking validation of user input for password length
+
   if (Number.isInteger(pwLength) == false || pwLength < 8 || pwLength > 128) {
+    console.log("Invalid Entry. Please enter a numerical value between 8 and 128");
     alert("Invalid Entry. Please enter a numerical value between 8 and 128");
-    pwLength = 0;
     generatePassword();
   } else {
     var Password = [];
     Password.length = pwLength;
     console.log("You selected a password length of: " + pwLength);
   }
+
+  // Ask user if password should include uppercase characters?
+  var pwUpper = confirm(
+    "Include uppercase characters in your random password?"
+  );
+  console.log("Include uppercase characters?: " + pwUpper);
+
+  // Ask user if password should include lowercase characters?
+  var pwLower = confirm(
+    "Include lowercase characters in your random password?"
+  );
+  console.log("Include lowercase characters?: " + pwLower);
+
+  // Ask user if password should include special characters?
+  var pwSpecial = confirm(
+    "Include special characters in your random password?"
+  );
+  console.log("Include special characters?: " + pwSpecial);
+
+  // Ask user if password should include whole numbers?
+  var pwNumber = confirm(
+    "Include whole numbers in your random password?"
+  );
+  console.log("Include whole numbers?: " + pwNumber);
+
+// If confirms are true, add to an array
+
+
+
 }
-
-// Ask user if password should include uppercase characters?
-
-//   var pwChoiceUpper = confirm(
-//     "Include uppercase characters in your random password? Type 'Yes' or 'No'"
-//   );
-//   if (pwChoiceUpper === false) {
-//     var pwUpper = false;
-
-//   } else {
-//     var pwUpper = true;
-//   }
-// }
 
 // console.log(
 //   "When asked if the password generator should include uppercase letters in your password, you selected "
